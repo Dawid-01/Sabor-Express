@@ -1,7 +1,9 @@
 # import this  #The Zen of Python
 import os
 
-restaurantes = ['Pizza','Sushi']
+restaurantes = [{'nome':'Okazam Sushishow', 'categoria':'Japonesa','ativo' :False},
+                {'nome':'OXinxei', 'categoria':'Japonesa','ativo' :True},
+                {'nome':'Kynuin', 'categoria':'Japonesa','ativo' :False}]
 
 def exibir_nome():
     print ('Sabor Express')
@@ -38,7 +40,10 @@ def cadastrar_restaurante():
 def listar_restaurantes():
     exibir_subtitulo('Listando os restaurantes')
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'- {nome_restaurante} | {categoria} | {ativo} ')
     voltar_ao_menu_principal()
 
 def escolher_opcao():
